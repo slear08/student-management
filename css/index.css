@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,800;1,900&display=swap');
+
+:root{
+    --primary: rgba(130, 66, 144, 1);
+    --secondary: rgba(233, 83, 137, 1);
+    --tertiary: rgba(59, 177, 155, 1);
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+img{
+    height: 100%;
+    width: 100%;
+}
+main{
+    margin-inline: auto;
+    width: min(95%, 100em);
+    height: 51em;
+    padding: 3rem 2rem 2rem 2rem ;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+
+.hero{
+    flex: 1;
+    height: 100%;
+}
+.login .banner{
+    display: flex;
+    height: 200px;
+}
+.login .banner .logo{
+    width: 260px;
+    height: 190px;
+}
+.login .banner .school-name{
+    display: flex;
+    justify-content: baseline;
+    flex-direction: column;
+    padding: 2rem .5rem;
+}
+.login .banner .school-name h1{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+.login .banner .school-name p{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--primary);
+}
+
+
+form{
+    margin-top: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+form p{
+    text-align: center;
+    margin: .5rem;
+    color: red;
+}
+form .input-holder{
+    display: flex;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+form .input-holder input {
+    width: 100%;
+    background: rgba(217, 217, 217, 1);
+    border: 1px solid rgba(53, 52, 52, 0.671);
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.336);
+    border-radius: .7rem;
+    padding: 1rem;
+    font-size: 1.3rem;
+}
+form .input-holder span{
+    width: 40px;
+    height: 40px;
+    margin-right: .5rem;
+}
+.login form label{
+    margin-left: 50px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.login button {
+    margin-left: 50px;
+    font-size: 1.2rem;
+    padding: .5rem 2rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--secondary);
+    color: white;
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.336);
+}
+
+@media screen and (max-width: 992px){
+    main{
+        justify-content: center;
+    }
+    .hero{
+        display: none;
+    }
+}

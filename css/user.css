@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,800;1,900&display=swap');
+
+:root{
+  --primary: rgba(130, 66, 144, 1);
+  --secondary: rgba(233, 83, 137, 1);
+  --tertiary: rgba(59, 177, 155, 1);
+
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+img{
+    height: 100%;
+    width: 100%;
+}
+main{
+  margin-inline: auto;
+  width: min(100vw, 100em);
+  height: min(100vh, 51.9em);
+  display: flex;
+}
+
+section .profile , header .profile-header , .content .profile-content{
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.side-bar{
+  width: 300px;
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 2rem;
+}
+section .profile{
+  height: 200px;
+  width: 200px;
+}
+section .profile-button{
+  margin-top: 6rem;
+  width: 100%;
+}
+.btn {
+  background-color: var(--secondary);
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 100%;
+  border-radius: .8rem;
+}
+.btn:hover{
+  background-color: rgb(255, 104, 160);
+}
+.btn .fa-user{
+  margin-right: 20px;
+}
+
+
+.main-content{
+  flex: 1;
+  margin: 2rem;
+}
+
+
+.main-content header {
+  display: flex;
+  align-items: center;
+}
+header .banner{
+  display: flex;
+}
+header .banner .logo{
+  width: 160px;
+  height: 120px;
+}
+header .banner .school-name{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+header .banner .school-name h1{
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+header .banner .school-name p{
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--primary);
+}
+header .profile-header{
+  width: 60px;
+  height: 60px;
+  margin-left: auto;
+  margin-right: .5rem;
+}
+
+
+
+section .content-container{
+  display: flex;
+  margin-top: 6rem;
+  background-color: var(--tertiary);
+  border-radius: 2rem;
+  padding: 3rem;
+  color: white;
+  animation: fade-in .4s linear;
+  transform-origin: 50% 0;
+}
+.content-container .profile-content{
+  width: 150px;
+  height: 150px;
+  margin-right: 2rem;
+}
+.content-container .details{
+  flex: 1;
+}
+.content-container .student-details , .parent-details{
+  margin-left: 2rem;
+  font-size: 1.5rem;
+}
+
+
+@keyframes fade-in {
+	from {
+		transform: scaleY(0);
+		opacity: 0;
+	}
+	to {
+		transform: scaleY(1);
+		opacity: 1;
+	}
+}

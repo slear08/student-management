@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,800;1,900&display=swap');
+
+:root{
+  --primary: rgba(130, 66, 144, 1);
+  --secondary: rgba(233, 83, 137, 1);
+  --tertiary: rgba(59, 177, 155, 1);
+
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+img{
+    height: 100%;
+    width: 100%;
+}
+main{
+  margin-inline: auto;
+  width: min(100vw, 100em);
+  height: min(100vh, 51.9em);
+  display: flex;
+}
+
+section .profile , header .profile-header , .content .profile-content{
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.side-bar{
+  width: 300px;
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 2rem;
+  color: white;
+}
+section .profile{
+  height: 200px;
+  width: 200px;
+  margin-bottom: 3rem;
+}
+
+
+
+
+.main-content{
+  flex: 1;
+  margin: 2rem;
+}
+
+
+.main-content header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+header .banner{
+  display: flex;
+}
+header .banner .logo{
+  width: 160px;
+  height: 120px;
+}
+header .banner .school-name{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+header .banner .school-name h1{
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+header .banner .school-name p{
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--primary);
+}
+header .profile-header{
+  width: 60px;
+  height: 60px;
+  margin-left: auto;
+  margin-right: .5rem;
+}
+
+.main-content .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+}
+
+.main-content .content > div{
+    margin: 2rem;
+}
+.main-content .content > div:hover{
+    cursor: pointer;
+    opacity: .8;
+}
+.main-content .content .image-container{
+    width: 200px;
+    height: 200px;
+}
+.main-content .content .icon-container{
+    position: absolute;
+    bottom: 35px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+}
+.add-data,.update-data,.view-data{
+    position: relative;
+    overflow: hidden;
+}
+.add-data h1,.update-data h1,.view-data h1{
+    position: absolute;
+    color: white;
+    font-size: 1.3rem;
+    top: 55px;
+    left: 15px;
+}
