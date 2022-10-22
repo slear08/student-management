@@ -123,3 +123,85 @@ header .profile-header{
     top: 55px;
     left: 15px;
 }
+
+
+/* MODALS */
+dialog{
+  border: 0;
+  box-shadow: 0 0 1em rgb( 0 0 0 / .3);
+}
+.modal{
+  width: 800px;
+  height: 550px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  padding: 1rem;
+  background-color: var(--tertiary);
+  border-radius: 1rem;
+}
+.modal::backdrop{
+  background-color: rgba(130, 66, 144, 1);
+  opacity: .6;
+}
+
+/* ADD MODALS */
+.modal .add-title{
+  color: var(--primary)
+}
+.modal .title{
+  color: rgba(44, 56, 146, 1);
+}
+.student-container, .guardian-container{
+  display: grid;
+  place-items: center;
+}
+.upload-container{
+  margin: 1rem 0;
+  padding-left: 3.2rem;
+}
+.submit-btn{
+  margin-top: 1rem;
+  padding-left: 3.2rem;
+}
+.submit-btn button,.close-btn button{
+  padding: .5rem 1.5rem;
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 0 .5rem rgb( 0 0 0 / .3);
+  cursor: pointer;
+  color: white;
+}
+.submit-btn button{
+  background-color: var(--secondary);
+}.close-btn button{
+  background-color: rgb(204, 33, 33);
+}
+.modal button:hover{
+  color: rgba(0, 0, 0, 0.63);
+  transform: translate(0,-10%);
+}
+.close-btn{
+  display: grid;
+  justify-content: end;
+  margin-top: .5rem;
+}
+.student-form,.guardian-form{
+  display: grid;
+  justify-content: center;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3rem;
+}
+.student-form > div, .guardian-form > div{
+  display: flex;
+  flex-direction: column;
+}
+.modal input[type="text"]{
+  padding: .5rem;
+  width: 300px;
+  margin: .5rem;
+  background-color: rgba(217, 217, 217, 1);
+  border: none;
+}
