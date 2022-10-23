@@ -99,7 +99,7 @@ header .profile-header{
 }
 .main-content .content > div:hover{
     cursor: pointer;
-    opacity: .8;
+    transform: translate(0,-10%);
 }
 .main-content .content .image-container{
     width: 200px;
@@ -124,7 +124,6 @@ header .profile-header{
     left: 15px;
 }
 
-
 /* MODALS */
 dialog{
   border: 0;
@@ -144,22 +143,6 @@ dialog{
 .modal::backdrop{
   background-color: rgba(130, 66, 144, 1);
   opacity: .6;
-}
-
-/* ADD MODALS */
-.modal .add-title{
-  color: var(--primary)
-}
-.modal .title{
-  color: rgba(44, 56, 146, 1);
-}
-.student-container, .guardian-container{
-  display: grid;
-  place-items: center;
-}
-.upload-container{
-  margin: 1rem 0;
-  padding-left: 3.2rem;
 }
 .submit-btn{
   margin-top: 1rem;
@@ -187,6 +170,29 @@ dialog{
   justify-content: end;
   margin-top: .5rem;
 }
+.modal .add-title{
+  color: var(--primary)
+}
+.modal .title{
+  color: rgba(44, 56, 146, 1);
+}
+.modal input[type="text"]{
+  padding: .5rem;
+  width: 300px;
+  margin: .5rem;
+  background-color: rgba(217, 217, 217, 1);
+  border: none;
+}
+
+/* ADD MODALS */
+.student-container, .guardian-container{
+  display: grid;
+  place-items: center;
+}
+.upload-container{
+  margin: 1rem 0;
+  padding-left: 3.2rem;
+}
 .student-form,.guardian-form{
   display: grid;
   justify-content: center;
@@ -198,10 +204,21 @@ dialog{
   display: flex;
   flex-direction: column;
 }
-.modal input[type="text"]{
-  padding: .5rem;
-  width: 300px;
-  margin: .5rem;
-  background-color: rgba(217, 217, 217, 1);
-  border: none;
+
+
+/* SEARCH */
+.search-form{
+  width: 800px;
+  height: 300px;
+}
+.search-form .form-container{
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.search-form .submit-btn{
+  padding: 0;
 }
