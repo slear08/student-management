@@ -64,7 +64,7 @@
                     // ADD FORM
                     include_once("./components/add.php");
                     include_once("./components/search.php");
-                    include_once("./components/update.php");
+                    include_once("./components/view.php");
                 ?>
             </div>
         </section>
