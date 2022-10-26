@@ -10,6 +10,9 @@ const searchForm = document.querySelector('#search-form');
 
 const closeBtn = document.querySelectorAll('#close-btn');
 const searchBtn = document.querySelector('#search-btn');
+const proceedBtn = document.querySelectorAll('#proceed-btn');
+
+
 
 
 addRecord.addEventListener('click', () => {
@@ -23,6 +26,14 @@ updateRecord.addEventListener('click', () => {
 // });
 viewRecord.addEventListener('click', () =>{
     viewTable.showModal();
+});
+// proceedBtn.addEventListener('click', () =>{
+//     window.location = "/portal/pages/admin.php";
+// });
+proceedBtn.forEach((btn) => {
+    btn.onclick = () =>{
+        window.location = "/portal/pages/admin.php";
+    }
 });
 closeBtn.forEach((btn) => {
     btn.onclick = () =>{

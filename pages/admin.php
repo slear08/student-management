@@ -1,3 +1,13 @@
+<?php 
+    include_once("../connection/connection.php");
+
+    $conn = connection();
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+
+    $adminName = $_SESSION['AdminName'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +23,7 @@
             <div class="profile">
                 <img src="../assets/profile.jpg" alt="profile">
             </div>
-            <h1>DASHBOARD</h1>
+            <h1>ADMIN PANEL</h1>
         </section>
         <section class="main-content">
             <header>
@@ -31,7 +41,7 @@
                 </div>
                 <a href="../logout.php">LOG OUT</a>
             </header>
-            <h1>Welcome Admin, (admin name)</h1>
+            <h1>Welcome Admin, <?php echo strtoupper($adminName);?></h1>
             <div class="content">
                 <div class="add-data" id="add-record">
                     <div class="image-container">
@@ -51,7 +61,7 @@
                         <img src="../assets/icon2.png" alt="update icon">
                     </div>
                 </div>
-                <div class="view-data">
+                <div class="view-data" id="view-record">
                     <div class="image-container">
                         <img src="../assets/view.png" alt="view folder">
                     </div>
@@ -61,10 +71,10 @@
                     </div>
                 </div>
                 <?php 
-                    // ADD FORM
                     include_once("./components/add.php");
                     include_once("./components/search.php");
                     include_once("./components/view.php");
+                    include_once("./components/success.php");
                 ?>
             </div>
         </section>

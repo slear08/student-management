@@ -8,20 +8,21 @@
         session_start();
     }
 
-    $studentID = $_SESSION['StudentID'];
+    $updateID = $_SESSION['StudentID'];
 
     
-    $studentSql = "SELECT * FROM students where student_id ='$studentID'";
+    $studentSql = "SELECT * FROM students where student_id ='$updateID'";
     $student = $conn->query($studentSql) or die($conn->error());
     $studentRow = $student->fetch_assoc();
 
-    $parentSql = "SELECT * FROM guardians where guardian_id ='$studentID'";
+    $parentSql = "SELECT * FROM guardians where guardian_id ='$updateID'";
     $parent = $conn->query($parentSql) or die($conn->error());
     $parentRow = $parent->fetch_assoc();
 
-    $emailSql = "SELECT * FROM accounts where id ='$studentID'";
+    $emailSql = "SELECT * FROM accounts where id ='$updateID'";
     $email = $conn->query($emailSql) or die($conn->error());
     $emailRow = $email->fetch_assoc();
+
 
 ?>
 
@@ -30,7 +31,7 @@
     <div class="modal-title">
         <h1>UPDATE DATA</h1>
     </div>
-    <form action="">
+    <form method="POST" action="process.php" enctype="multipart/form-data">
         <div class="student-container">
             <div class="title">
                 <h1>STUDENT INFORMATION</h1>
@@ -68,11 +69,12 @@
                 </div>
             </div>
         </div>
+        <div class="submit-btn">
+            <button type="submit" name="update">UPDATE</button>
+        </div>
     </form>
-    <div class="submit-btn">
-        <button type="submit">UPDATE</button>
-    </div>
+    
     <div class="close-btn">
-        <button id="close-btn">CLOSE</button>
+        <button id="close-btn" >CLOSE</button>
     </div>
 </dialog>

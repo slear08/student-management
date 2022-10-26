@@ -36,7 +36,7 @@
     <main>
         <section class="side-bar">
             <div class="profile">
-                <img src="../assets/profile.jpg" alt="profile">
+            <?php echo '<img src="../upload/'.$studentRow["image"].'" alt="profile">'?>
             </div>
             <div class="profile-button">
                 <button class="btn" onclick="toggleContainer()"><i class="fa fa-user"></i>Profile</button>
@@ -54,14 +54,14 @@
                     </div>
                 </div>
                 <div class="profile-header">
-                    <img src="../assets/profile.jpg" alt="">
+                    <?php echo '<img src="../upload/'.$studentRow["image"].'" alt="profile">'?>
                 </div>
                 <a href="../logout.php">LOG OUT</a>
             </header>
             <div class="content">
                 <div class="content-container ">
                     <div class="profile-content">
-                        <img src="../assets/profile.jpg" alt="">
+                    <?php echo '<img src="../upload/'.$studentRow["image"].'" alt="profile">'?>
                     </div>
                     <div class="details">
                         <h1>Student Detail</h1>
@@ -74,7 +74,7 @@
                         </div>
                         <h1>Parent/Guardian Detail:</h1>
                         <div class="parent-details">
-                            <p>Guardian Name: <?php echo strtoupper($parentRow['name']);?></p>
+                            <p>Guardian Name: <?php echo strtoupper($parentRow['firstname']." ".$parentRow['lastname']);?></p>
                             <p>Relation: <?php echo strtoupper($parentRow['relation']);?></p>
                             <p>Contact Number: <?php echo $parentRow['contact'];?></p>
                         </div>
@@ -83,6 +83,6 @@
             </div>
         </section>
     </main>
+    <script src="../js/user.js"></script>
 </body>
-<script src="../js/user.js"></script>
 </html>

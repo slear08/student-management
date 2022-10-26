@@ -7,67 +7,13 @@
         session_start();
     }
 
-    if(isset($_POST['submit'])){
-
-        // capture the information
-
-        // Studnet information
-        $studentID= $_POST['student-id'];
-        $studentFirstName = $_POST['student-first-name'];
-        $studentLastName = $_POST['student-last-name'];
-        $section = $_POST['section'];
-        $year= $_POST['year'];
-        $course = $_POST['course'];
-        $email = $_POST['email'];
-
-        // Guardian information
-        $guardianFirstName = $_POST['guardian-first-name'];
-        $guardianLastName = $_POST['guardian-last-name'];
-        $relation = $_POST['relation'];
-        $contact = $_POST['contact'];
-
-        // Image upload
-        $filename = $_FILES["image"]["name"];
-        $tempname = $_FILES["image"]["tmp_name"];
-        $folder = "../upload/" . $filename;
-        
-
-        // Generate password
-        $password = bin2hex(openssl_random_pseudo_bytes(5));
-
-        // Queries for
-        // student information
-        // guardian information
-        // account information
-        $sql1 = "INSERT INTO `students`(`student_id`, `firstname`, `lastname`, `year`, `section`, `course`, `image`) VALUES ('$studentID','$studentFirstName','$studentLastName','$year','$section','$course','$filename')"; 
-
-        $sql2 = "INSERT INTO `accounts`(`id`, `name`, `email`, `password`, `user_type`) VALUES ('$studentID','$studentFirstName','$email','$password','student')";
-
-        $sql3 = "INSERT INTO `guardians`(`guardian_id`, `firstname`, `lastname`, `relation`, `contact`) VALUES ('$studentID','$guardianFirstName','$guardianLastName','$relation','$contact')"; 
-        
-
-        if(mysqli_query($conn, $sql1) && mysqli_query($conn, $sql2) && mysqli_query($conn, $sql3)){
-
-            move_uploaded_file($tempname, $folder);     
-            echo '<script>
-                    alert("Success")
-                    window.location = "/portal/pages/admin.php";
-                  </script>';
-
-        }else{
-            echo "Error: <br>" . $conn->error;
-        }
-
-        $conn->close();
-
-    }
 
 ?>
 <dialog class="modal" id="add-form">
     <div class="modal-title">
         <h1>ADD RECORD</h1>
     </div>
-    <form method="POST" action="<?php echo $_SERVER["PHP_SELF"];?>" enctype="multipart/form-data">
+    <form method="POST" action="process.php" enctype="multipart/form-data">
         <div class="student-container">
             <div class="title">
                 <h1>STUDENT INFORMATION</h1>

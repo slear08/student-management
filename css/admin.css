@@ -44,14 +44,10 @@ section .profile{
   margin-bottom: 3rem;
 }
 
-
-
-
 .main-content{
   flex: 1;
   margin: 2rem;
 }
-
 
 .main-content header {
   display: flex;
@@ -131,7 +127,7 @@ dialog{
 }
 .modal{
   width: 800px;
-  height: 550px;
+  height: 610px;
   position: absolute;
   transform: translate(-50%, -50%);
   left: 50%;
@@ -170,7 +166,7 @@ dialog{
   justify-content: end;
   margin-top: .5rem;
 }
-.modal .add-title{
+.modal .modal-title{
   color: var(--primary)
 }
 .modal .title{
@@ -221,4 +217,57 @@ dialog{
 }
 .search-form .submit-btn{
   padding: 0;
+}
+
+/* VIEW  DATA */
+
+.data {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.data td, .data th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.data td{
+  width: 50px;
+  height: 100px;
+}
+.data tr:nth-child(even){background-color: var(--secondary);}
+.data tr:nth-child(odd){background-color: rgb(172, 172, 172) ;}
+/* .data tr:hover {background-color: #ddd;} */
+
+.data th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: var(--primary);
+  color: white;
+}
+
+/* POP UP MESSAGE */
+.message{
+  width: 500px;
+  height: 500px;
+}
+.message .message-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.message .image-icon{
+  width: 280px;
+  height: 250px;
+}
+.message .modal-message{
+  width: 25ch;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+.message button{
+  background-color: var(--secondary);
 }

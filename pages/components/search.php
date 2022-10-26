@@ -24,9 +24,12 @@
             echo '<script>
                     document.getElementById("update-form").showModal();
                   </script>';
+                  
         }else{
             $errorMessage = "No result found";
         }
+
+        
     } 
 ?>
 <dialog class="modal search-form" id="search-form">
@@ -34,7 +37,7 @@
         <h1>SEARCH</h1>
     </div>
     <div class="form-container">
-        <form method="POST" action="<?php echo $_SERVER["PHP_SELF"];?>">
+        <form method="POST">
             <input type="text" name="search-student" placeholder="SEARCH STUDENT ID" required>
             <div><p style="color:red;"><?php echo $errorMessage?></p><div>
         </form>
@@ -43,7 +46,9 @@
             <button type="submit" name="search" id="search-btn">SEARCH</button>
         </div>
     </div>
+    
     <div class="close-btn">
         <button id="close-btn">CLOSE</button>
     </div>
 </dialog>
+
