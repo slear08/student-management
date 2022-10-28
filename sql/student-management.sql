@@ -41,7 +41,6 @@ CREATE TABLE `accounts` (
 
 INSERT INTO `accounts` (`id`, `name`, `email`, `password`, `user_type`) VALUES
 (1, 'slear', 'admin@daffodils.edu', 'admin123', 'admin'),
-(45654156, 'reah', 'reah@gmail.com', '2117f34bba', 'student'),
 (2020202095, 'Slear', 'slearmendoza@gmail.com', '123456', 'student');
 
 -- --------------------------------------------------------
@@ -63,7 +62,6 @@ CREATE TABLE `guardians` (
 --
 
 INSERT INTO `guardians` (`guardian_id`, `firstname`, `lastname`, `relation`, `contact`) VALUES
-(45654156, 'Rizalina', 'Gacusan', 'Mother', 9123456789),
 (2020202095, 'Salvador', 'Mendoza', 'Father', 9380469133);
 
 -- --------------------------------------------------------
@@ -87,7 +85,6 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`student_id`, `firstname`, `lastname`, `year`, `section`, `course`, `image`) VALUES
-(45654156, 'reah', 'Mendoza', '4th', 'CEIT-37-501A', 'BSIT', 'add.png'),
 (2020202095, 'Slear', 'Mendoza', '34th', 'CEIT-37-501A', 'BSIT', 'profile.jpg');
 
 --
