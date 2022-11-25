@@ -32,7 +32,7 @@ viewRecord.addEventListener('click', () =>{
 // });
 proceedBtn.forEach((btn) => {
     btn.onclick = () =>{
-        window.location = "/portal/pages/admin.php";
+        window.location = "admin.php";
     }
 });
 closeBtn.forEach((btn) => {

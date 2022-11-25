@@ -47,13 +47,11 @@
         
 
         if(mysqli_query($conn, $sql1) && mysqli_query($conn, $sql2) && mysqli_query($conn, $sql3)){
-
             move_uploaded_file($tempname, $folder);     
-            include_once("admin.php");
+            include_once("../pages/admin.php");
             echo '<script>
                     document.getElementById("add-message").showModal();
                   </script>';
-
         }else{
             echo "Error: <br>" . $conn->error;
         }
