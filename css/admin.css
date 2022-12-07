@@ -13,6 +13,15 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+	opacity: 0;
+}
+input[type=number]{
+  padding: .5rem;
+  border-radius: .3rem;
+  border: none;
+}
 img{
     height: 100%;
     width: 100%;
@@ -23,7 +32,6 @@ main{
   height: min(100vh, 51.9em);
   display: flex;
 }
-
 section .profile , header .profile-header , .content .profile-content{
   border-radius: 50%;
   overflow: hidden;
@@ -225,6 +233,7 @@ dialog{
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  margin-top: 1rem;
 }
 
 .data td, .data th {
@@ -246,7 +255,46 @@ dialog{
   background-color: var(--primary);
   color: white;
 }
+.search button{
+  color: white;
+  border: none;
+  padding: .5rem 1rem .5rem 1rem;
+  border-radius: 1rem;
+  background-color: var(--secondary);
+  cursor: pointer;
+}
 
+/* DELETE */
+.delete-modal {
+  height: 500px;
+  width: 500px;
+  padding: 3rem;
+}
+.delete-modal .main-container{
+  display: grid;
+  place-items: center;
+  height: 80%;
+  margin-bottom: 2.5rem;
+}
+.delete-modal .image-container{
+  border-radius: 50%;
+  overflow: hidden;
+}
+.delete-modal .student-info{
+  display: grid;
+  place-items: center;
+}
+.main-container button{
+  color: white;
+  border: none;
+  padding: .5rem 1rem .5rem 1rem;
+  border-radius: 1rem;
+  background-color: rgb(204, 33, 33);
+  cursor: pointer;
+}
+.delete-modal #close-btn{
+  background-color: var(--secondary);
+}
 /* POP UP MESSAGE */
 .message{
   width: 500px;

@@ -27,3 +27,18 @@
         </div>
     </div>
 </dialog>
+
+<dialog class="modal message" id="delete-message">
+    <div class="message-container">
+        <div class="image-icon">
+            <img src="../assets/success.png" alt="success">
+        </div>
+        <div class="modal-message">
+            <h1>DELETED RECORD</h1>
+            <p>The student record has been successfully deleted</p>
+        </div>
+        <div class="close-btn">
+            <button id="proceed-btn">PROCEED</button>
+        </div>
+    </div>
+</dialog>
