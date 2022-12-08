@@ -47,25 +47,23 @@
         
 
         if(mysqli_query($conn, $sql1) && mysqli_query($conn, $sql2) && mysqli_query($conn, $sql3)){
+
             move_uploaded_file($tempname, $folder);     
-            include_once("../pages/admin.php");
+            include_once("admin.php");
+
             echo '<script>
                     document.getElementById("add-message").showModal();
                   </script>';
         }else{
             echo "Error: <br>" . $conn->error;
         }
-        header("Location: admin.php");
 
     }
 
 
-
-
-    
-    // UPDATE DATA
+        
     if(isset($_POST['update'])){
-       
+        // UPDATE DATA
         $updateID = $_SESSION['StudentID'];
         // Studnet information
         $studentID= $_POST['student-id'];
@@ -85,6 +83,8 @@
         $filename = $_FILES["image"]["name"];
         $tempname = $_FILES["image"]["tmp_name"];
         $folder = "../upload/".$filename;
+
+      
         
         if ($_FILES['image']['size'] > 0 ){
                // Image upload
@@ -109,10 +109,32 @@
             echo '<script>
                     document.getElementById("update-message").showModal();
                   </script>';
+                  exit();
         }else{
             echo "Error: <br>" . $conn->error;
         }
 
     }
 
+    
+    if(isset($_POST['delete-student'])){
+        include_once("admin.php");
+        $studentID = $_SESSION['DeleteStudent'];
+
+        $sql = "SELECT * FROM students WHERE student_id = '$studentID' ";
+        $student = $conn->query($sql) or die($conn->error);
+        $studentRow = $student->fetch_assoc();
+        $image = $studentRow['image'];
+        $imagePath = "../upload/".$image;
+        
+        $sql1 = "DELETE FROM students WHERE student_id = '$studentID'";
+        $sql2 = "DELETE FROM accounts WHERE id = '$studentID'";
+        $sql3 = "DELETE FROM guardians WHERE guardian_id = '$studentID'";
+        if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE && $conn->query($sql3) === TRUE){
+            unlink($imagePath);
+            echo '<script>
+            document.getElementById("delete-message").showModal();
+          ehh</script>';
+        }
+    }
 ?>

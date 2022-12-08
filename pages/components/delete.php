@@ -22,23 +22,8 @@
             <h1><?php echo strtoupper($studentRow['firstname']." ".$studentRow['lastname']);?></h1>
             <p><?php echo $studentRow['student_id'];?></p>
         </div>
-        <?php
-            $image = $studentRow['image'];
-            $imagePath = "../upload/".$image;
-            if(isset($_POST['delete'])){
-                $sql1 = "DELETE FROM students WHERE student_id = '$studentID'";
-                $sql2 = "DELETE FROM accounts WHERE id = '$studentID'";
-                $sql3 = "DELETE FROM guardians WHERE guardian_id = '$studentID'";
-                if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE && $conn->query($sql3) === TRUE){
-                    unlink($imagePath);
-                    echo '<script>
-                    document.getElementById("delete-message").showModal();
-                  </script>';
-                }
-            }
-        ?>
-        <form action="" method="post">
-            <button name="delete">DELETE STUDENT</button>
+        <form action="process.php" method="POST">
+            <button name="delete-student">DELETE STUDENT</button>
         </form>
     </div>
     <div class="close-btn">
